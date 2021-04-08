@@ -4,11 +4,13 @@ const fs = require('fs');
 try {
   if(fs.existsSync("./certs/cert.crt" && fs.existsSync("./certs/cert.key"))) {
     var httpsdata = {
+      allowHTTP1: true,
       cert: fs.readFileSync("./certs/cert.crt"),
       key: fs.readFileSync("./certs/cert.key")
     }
   } else if (fs.existsSync("./certs/cert.pem")) {
     var httpsdata = {
+      allowHTTP1: true,
       cert: fs.readFileSync("./certs/cert.pem"),
       key: fs.readFileSync("./certs/cert.pem")
     }
