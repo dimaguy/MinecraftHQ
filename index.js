@@ -71,8 +71,7 @@ const MessageFlags =
 	ConsoleLogMessage: "3",    // Server Message
 	ConsoleCommand: "4",       // A command sent from the dashboard to the API.
 	HeartbeatMessage: "5",     // Quick sanity check with some statistics
-	GameListMessage: "6",      // Not implemented yet.
-	DoKickOrDisconnect: "7"    // A message when a client is kicked or the server shuts down.
+	DoKickOrDisconnect: "6"    // A message when a client is kicked or the server shuts down.
 };
 
 wss.on('connection', function connection(ws) {
@@ -124,7 +123,7 @@ wss.on('connection', function connection(ws) {
 console.log("Enabling RCON");
 var rcon = new RCON(HOST, RCONPORT, RCONPASS);
 rcon.on('auth', function() {
-  console.log("Authed!");
+  console.log("RCON: Authed!");
 
 }).on('end', function() {
   console.log("Socket closed!");
@@ -136,7 +135,15 @@ rcon.on('auth', function() {
     };
     ws.send(encrypt(JSON.stringify(Disconnect),ws.socketProps.key));
   });
-
+}).on('server', function(str) {
+  wss.clients.forEach(ws => {
+    const message = {
+      Text: str,
+      Type: MessageFlags.ConsoleLogMessage,
+      Date: Date.now()
+    }
+    ws.send(encrypt(JSON.stringify(message),ws.socketProps.key));
+  });
 }).on('error', function(error) {
   console.error(error);
   wss.clients.forEach(ws => {
