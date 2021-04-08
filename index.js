@@ -224,7 +224,7 @@ fastify.decorate('notFound', (request, reply) => {
 });
 fastify.setNotFoundHandler(fastify.notFound);
 
-fastify.get('/players.json', options, async (req, reply) => {
+fastify.get('/players.json', async (req, reply) => {
     reply.send(players)
 })
 
