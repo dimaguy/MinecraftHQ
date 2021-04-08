@@ -180,6 +180,7 @@ setInterval(function () {
 console.log("Enabling Query");
 const query = new Query(HOST, QUERYPORT, { timeout: 10000 })
 var cpuUsage = 0
+var players = []
 function checkMcServer() {
   // connect every time to get a new challengeToken
   query.connect(function (err) {
@@ -196,14 +197,15 @@ function fullStatBack(err, stat) {
     console.error(err);
   }
   wss.clients.forEach(ws => {
-    os.sysUptime
+    players = stat._player;
     const heartbeat = {
       Type: MessageFlags.HeartbeatMessage,
-      Flags: [stat.version, stat.maxplayers, stat.numplayers, os.sysUptime(), cpuUsage, 100-os.freememPercentage()]
+      Flags: [stat.version, stat.maxplayers, stat.numplayers, os.sysUptime(), cpuUsage, 100-os.freememPercentage()],
+      Date: Date.now()
     }
     ws.send(encrypt(JSON.stringify(heartbeat),ws.socketProps.key))
   })
-  console.log('%s>fullBack \n', new Date(), stat)
+  //console.log('%s>fullBack \n', new Date(), stat)
 }
 
 setInterval(function () {
@@ -221,6 +223,10 @@ fastify.decorate('notFound', (request, reply) => {
   reply.code(404).header('Content-Type', 'text/html').type('text/html').send(fs.readFileSync('./public/404.html'));
 });
 fastify.setNotFoundHandler(fastify.notFound);
+
+fastify.get('/players.json', options, async (req, reply) => {
+    reply.send(players)
+})
 
 fastify.listen(HTTPPORT, HTTPADDR, function (err, address) {
   if (err) {
