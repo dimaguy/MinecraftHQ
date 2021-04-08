@@ -1,0 +1,27 @@
+{
+  "name": "minecrafthq",
+  "version": "1.0.0",
+  "description": "Minecraft RCON Frontend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dimaguy",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "atob": "^2.1.2",
+    "btoa": "^1.2.1",
+    "fastify": "^3.14.1",
+    "fastify-static": "^4.0.1",
+    "mcquery": "^1.0.2",
+    "os-utils": "^0.0.14",
+    "rcon": "^1.0.3",
+    "uuid": "^8.3.2",
+    "wait-for-event": "^2.0.1",
+    "ws": "^7.4.4"
+  },
+  "optionalDependencies": {
+    "bufferutil": "^4.0.3",
+    "utf-8-validate": "^5.0.4"
+  }
+}
