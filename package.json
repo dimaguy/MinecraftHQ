@@ -11,7 +11,7 @@
   "dependencies": {
     "atob": "^2.1.2",
     "btoa": "^1.2.1",
-    "fastify": "^3.14.1",
+    "fastify": "^3.14.2",
     "fastify-static": "^4.0.1",
     "mcquery": "^1.0.2",
     "os-utils": "^0.0.14",
