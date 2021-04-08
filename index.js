@@ -1,17 +1,33 @@
 console.log("Booting up MinecraftHQ");
 console.log("Loading Dependencies");
-const fastify = require('fastify')({logger: true});
+const fs = require('fs');
+try {
+  if(fs.existsSync("./certs/cert.crt" && fs.existsSync("./certs/cert.key"))) {
+    var httpsdata = {
+      cert: fs.readFileSync("./certs/cert.crt"),
+      key: fs.readFileSync("./certs/cert.key")
+    }
+  } else if (fs.existsSync("./certs/cert.pem")) {
+    var httpsdata = {
+      cert: fs.readFileSync("./certs/cert.pem"),
+      key: fs.readFileSync("./certs/cert.pem")
+    }
+  } else {var httpsdata = null}
+} catch(err) {
+  console.error(err)
+}
+const fastify = require('fastify')({logger: true, http2: true, https: httpsdata});
 const path = require('path');
 const Query = require('mcquery');
 const RCON = require('rcon');
 const WebSocket = require('ws');
 const {v4: uuidv4} = require('uuid');
-const fs = require('fs');
+
 const cfgpath = './config.json';
 const {waitFor} = require('wait-for-event');
 const os = require('os-utils');
-eval(fs.readFileSync('blackTea.js')+'');
-eval(fs.readFileSync('md5.js')+'');
+eval(fs.readFileSync('blackTea.js').toString('ascii'));
+eval(fs.readFileSync('md5.js').toString('ascii'));
 
 console.log("Loading configuration file or environment variables");
 
@@ -55,7 +71,7 @@ function createDefaultkey() {
   const newkey = uuidv4();
   config.apikeys.push(newkey);
   fs.writeFileSync(cfgpath, JSON.stringify(config,null,2), function writeJSON(err) {
-    if (err) return console.log(err);
+    if (err) return console.error(err);
   });
   console.log(JSON.stringify(config));
   console.log("No api keys found, generated a new one: " + newkey);
