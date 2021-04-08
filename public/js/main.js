@@ -29,8 +29,7 @@ const MessageFlags =
 	ConsoleLogMessage: "3",    // Server Message
 	ConsoleCommand: "4",       // A command sent from the dashboard to the API.
 	HeartbeatMessage: "5",     // Quick sanity check with some statistics
-	GameListMessage: "6",      // Not implemented yet.
-	DoKickOrDisconnect: "7",   // A message when a client is kicked or the server shuts down.
+	DoKickOrDisconnect: "6",   // A message when a client is kicked or the server shuts down.
 }
 
 window.onload = onload();
