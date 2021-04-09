@@ -96,7 +96,6 @@ wss.on('connection', function connection(ws) {
   ws.id = uuidv4()
   const socketProps = {
     authenticated: false,
-    waitingresponse: false,
     key: ""
   };
   ws.socketProps = socketProps
@@ -130,11 +129,16 @@ wss.on('connection', function connection(ws) {
         case MessageFlags.ConsoleCommand:
         queue.push({key: socketProps.key, command: msg.Text})
         console.log(queue)
-        socketProps.waitingresponse = true;
         break;
       };
     };
   });
+  setTimeout(function() {
+    if (!socketProps.authenticated) {
+      ws.Terminate()
+      console.log("Disconnected unauthenticated client")
+    }
+  }, 5000)
 });
 
 

@@ -59,7 +59,7 @@ function connect() {
 	connection = new WebSocket(serverUrl);
 
 	connection.onopen = function (evt) {
-		document.getElementById("status").innerHTML = "";
+		document.getElementById("status").innertext = "";
 		var auth = {
 			Text: document.getElementById("apikey").value,
 			Type: MessageFlags.LoginApiRequest,
@@ -70,7 +70,7 @@ function connect() {
 
 	connection.onerror = function (event) {
 		console.error("WebSocket error observed: ", event);
-		document.getElementById("status").innerHTML = "WebSocket Error: " + event.type;
+		document.getElementById("status").innertext = "WebSocket Error: " + event.type;
 		document.getElementById("text").value = "";
 		document.getElementById("text").disabled = true;
 		document.getElementById("send").disabled = true;
@@ -95,7 +95,7 @@ function connect() {
 				encryptionKey = document.getElementById("apikey").value;
 				loggedIn = true;
 				document.getElementById("status").style.color = "green";
-				document.getElementById("status").innerHTML = "Logged in!";
+				document.getElementById("status").innertext = "Logged in!";
 				document.getElementById("text").value = "";
 				document.getElementById("PlayersCSV").href = "/players.json";
 				document.getElementById("text").disabled = false;
@@ -112,7 +112,7 @@ function connect() {
 
 			case MessageFlags.LoginApiRejected:
 				document.getElementById("status").style.color = "red";
-				document.getElementById("status").innerHTML = "Api Key Error!";
+				document.getElementById("status").innertext = "Api Key Error!";
 				document.getElementById("text").disabled = true;
 				document.getElementById("send").disabled = true;
 				console.log("API Key Rejected")
@@ -121,7 +121,7 @@ function connect() {
 
 			case MessageFlags.DoKickOrDisconnect:
 				document.getElementById("status").style.color = "red";
-				document.getElementById("status").innerHTML = "Kicked:" + msg.Text;
+				document.getElementById("status").innertext = "Kicked:" + msg.Text;
 				document.getElementById("text").value = "";
 				document.getElementById("text").disabled = true;
 				document.getElementById("send").disabled = true;
@@ -135,9 +135,9 @@ function connect() {
 
 			case MessageFlags.HeartbeatMessage:
 				var tokens = msg.Flags;
-				document.getElementById("Version").innerHTML = tokens[0];
-				document.getElementById("Players").innerHTML = tokens[2];
-				document.getElementById("Uptime").innerHTML = tokens[3];
+				document.getElementById("Version").innertext = tokens[0];
+				document.getElementById("Players").innertext = tokens[2];
+				document.getElementById("Uptime").innertext = tokens[3];
 				playersOnline = tokens[2];
 				maxPlayers = tokens[1];
 				cpuUsage = tokens[4];
