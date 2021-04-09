@@ -63,7 +63,8 @@ function connect() {
 		var auth = {
 			Text: document.getElementById("apikey").value,
 			Type: MessageFlags.LoginApiRequest,
-			Date: Date.now()
+			Date: Date.now(),
+			Padding: Math.floor(Math.random() * 999999999) + 1000000000
 		};
 		sendEncrypted(JSON.stringify(auth));
 	};
