@@ -136,7 +136,7 @@ wss.on('connection', function connection(ws) {
   setTimeout(function() {
     if (!socketProps.authenticated) {
       ws.Terminate()
-      console.log("Disconnected unauthenticated client")
+      console.log("Disconnected client after 5 seconds without logging in.")
     }
   }, 5000)
 });
@@ -156,6 +156,7 @@ rcon.on('auth', function() {
       Date: Date.now()
     };
     ws.send(encrypt(JSON.stringify(Disconnect),ws.socketProps.key));
+    ws.Terminate();
   });
 }).on('server', function(str) {
   wss.clients.forEach(ws => {
@@ -175,6 +176,7 @@ rcon.on('auth', function() {
       Date: Date.now()
     };
     ws.send(encrypt(JSON.stringify(Disconnect),ws.socketProps.key));
+    ws.Terminate();
   });
 
 });
