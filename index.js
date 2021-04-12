@@ -18,7 +18,7 @@ try {
 } catch(err) {
   console.error(err)
 }
-const fastify = require('fastify')({logger: true, http2: true, https: httpsdata});
+const fastify = require('fastify')({logger: true, https: httpsdata});
 const path = require('path');
 const Query = require('mcquery');
 const RCON = require('rcon');
