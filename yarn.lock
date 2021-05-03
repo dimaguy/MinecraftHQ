@@ -128,7 +128,7 @@ debug@2.6.9:
   dependencies:
     ms "2.0.0"
 
-debug@^4.0.0, debug@^4.1.1:
+debug@^4.0.0, debug@^4.3.1:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.1.tgz#f0d229c505e0c6d8c49ac553d1b13dc183f6b2ee"
   integrity sha512-doEwdvm4PCeK4K3RQN2ZC2BYUBaxwLARCqZmMjtF8a51J2Rb0xpVloFRnCODwqjpwnAoao4pelN8l3RJdv3gRQ==
@@ -359,14 +359,14 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
-mcquery@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/mcquery/-/mcquery-1.0.2.tgz#8979bb361f687d0ba896ea50729cf937d9b5ee4b"
-  integrity sha512-4Bkp4HTZDYJ1WxkvhIbZ5fr/Hzgea2H80+rZL0bMc+CjmkJ/XjJ4GBDOUsKVmYSGyqUAC9KSbsnOEWR//61bog==
+mcquery@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/mcquery/-/mcquery-1.0.3.tgz#f2a15bdf677d3ec738a457d993d47bc666c6e39e"
+  integrity sha512-W0GSH9e5nactdBbYPXumPCU0BdpvGbDq2swEqRtGJNl7u/nxNOu+CjANIkmr94XzWFt69pGKhaMu9RWYM2X+hQ==
   dependencies:
     buffercursor "0.0.12"
     code "^5.2.4"
-    debug "^4.1.1"
+    debug "^4.3.1"
 
 mime@1.6.0:
   version "1.6.0"
