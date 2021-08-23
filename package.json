@@ -15,7 +15,7 @@
     "fastify-static": "^4.2.3",
     "mcquery": "^1.0.3",
     "os-utils": "^0.0.14",
-    "rcon": "^1.0.3",
+    "rcon": "^1.0.4",
     "uuid": "^8.3.2",
     "wait-for-event": "^2.0.1",
     "ws": "^8.2.0"
