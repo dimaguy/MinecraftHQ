@@ -474,10 +474,10 @@ range-parser@~1.2.1:
   resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.1.tgz#3cf37023d199e1c24d1a55b84800c2f3e6468031"
   integrity sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg==
 
-rcon@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/rcon/-/rcon-1.0.4.tgz#b6a92a40f2f225bf1139a276761b104a3deb06f1"
-  integrity sha512-ENm4LGM8ZteAObu6WleCqC1RYfzPRhn/e0QKDC0QWI3w9i3nH94hQJSmZ0cQGT7RgmUz1YabqunHbByKOJ+Teg==
+rcon@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/rcon/-/rcon-1.1.0.tgz#82a27bbfadd4c13b3c5d828b55ce15bd606eb7c3"
+  integrity sha512-eotwcApOBjfadTjqQlrZVR4jzlwGCMNxmHhnFZx+g4kouwwRstRHkk1ON7DzkqrHNIjADSh0cU3gThSsDolUpg==
 
 readable-stream@^3.4.0, readable-stream@^3.6.0:
   version "3.6.0"
