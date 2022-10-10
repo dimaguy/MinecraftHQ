@@ -288,17 +288,17 @@ fastify-static@^4.7.0:
     fastify-static-deprecated "npm:fastify-static@4.6.1"
     process-warning "^1.0.0"
 
-fastify@^4.7.0:
-  version "4.7.0"
-  resolved "https://registry.yarnpkg.com/fastify/-/fastify-4.7.0.tgz#53c0cc16c3850580d22d0bb8e966b263e5c0fcd1"
-  integrity sha512-FK3WT6arZOd2Fm696vIn90DOFr1f8QZbFcvUzYRPJTBV0pzm1xN8Y3n9yegtv1ajAxpdTwuLhB10Wwb/ptMRqQ==
+fastify@^4.8.0:
+  version "4.8.0"
+  resolved "https://registry.yarnpkg.com/fastify/-/fastify-4.8.0.tgz#b0e7b7b53056d964b2cb9dc4e5d4c3e2b443dd6c"
+  integrity sha512-q2ysGUwr+9HfUlnwCq/R0xjeI8XsT8OIZ8+KGBxD2g+NrkADofmdj4YFbDuoU9uK6mslYrGnrAWSsaWnEOAq5Q==
   dependencies:
     "@fastify/ajv-compiler" "^3.3.1"
     "@fastify/error" "^3.0.0"
     "@fastify/fast-json-stringify-compiler" "^4.1.0"
     abstract-logging "^2.0.1"
     avvio "^8.2.0"
-    find-my-way "^7.2.0"
+    find-my-way "^7.3.0"
     light-my-request "^5.6.1"
     pino "^8.5.0"
     process-warning "^2.0.0"
@@ -315,10 +315,10 @@ fastq@^1.6.1:
   dependencies:
     reusify "^1.0.4"
 
-find-my-way@^7.2.0:
-  version "7.2.1"
-  resolved "https://registry.yarnpkg.com/find-my-way/-/find-my-way-7.2.1.tgz#b96fb322c109a4fae301cf68b87f19b78f8e6d9a"
-  integrity sha512-OnV0iCd2PnYzC+K4qH8P4WkapYpLJrtdPBBwJqqBawNyEeT2EkGDPcGTEISWkKUW7q5ReOF5aQi8HizjqLOP+w==
+find-my-way@^7.3.0:
+  version "7.3.1"
+  resolved "https://registry.yarnpkg.com/find-my-way/-/find-my-way-7.3.1.tgz#fd8a0b468a18c283e05be59f93a627f37e306cfa"
+  integrity sha512-kGvM08SOkqvheLcuQ8GW9t/H901Qb9rZEbcNWbXopzy4jDRoaJpJoObPSKf4MnQLZ20ZTp7rL5MpF6rf+pqmyg==
   dependencies:
     fast-deep-equal "^3.1.3"
     fast-querystring "^1.0.0"
