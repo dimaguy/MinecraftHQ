@@ -288,10 +288,10 @@ fastify-static@^4.7.0:
     fastify-static-deprecated "npm:fastify-static@4.6.1"
     process-warning "^1.0.0"
 
-fastify@^4.8.0:
-  version "4.8.0"
-  resolved "https://registry.yarnpkg.com/fastify/-/fastify-4.8.0.tgz#b0e7b7b53056d964b2cb9dc4e5d4c3e2b443dd6c"
-  integrity sha512-q2ysGUwr+9HfUlnwCq/R0xjeI8XsT8OIZ8+KGBxD2g+NrkADofmdj4YFbDuoU9uK6mslYrGnrAWSsaWnEOAq5Q==
+fastify@^4.8.1:
+  version "4.8.1"
+  resolved "https://registry.yarnpkg.com/fastify/-/fastify-4.8.1.tgz#45a341daa47e87e295ede5de31868ced2a1728c5"
+  integrity sha512-3an6yyXg7j5XPHTRxgFqUwIRaJPR7F8OPR8Uboo0SIgHx1orOqc9Y8Sl5Kz8+xK7JCy3c3mfRujskDjMu/nFfA==
   dependencies:
     "@fastify/ajv-compiler" "^3.3.1"
     "@fastify/error" "^3.0.0"
