@@ -18,7 +18,7 @@
     "rcon": "^1.1.0",
     "uuid": "^9.0.0",
     "wait-for-event": "^2.0.1",
-    "ws": "^8.10.0"
+    "ws": "^8.11.0"
   },
   "optionalDependencies": {
     "bufferutil": "^4.0.7",
