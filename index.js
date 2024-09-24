@@ -245,7 +245,7 @@ setInterval(function () {
 }, 5000);
 
 console.log("Enabling HTTP Server");
-fastify.register(require('fastify-static'), {
+fastify.register(require('@fastify/static'), {
   root: path.join(__dirname, '/public'),
   prefix: '/'
 });
@@ -259,7 +259,7 @@ fastify.get('/players.json', async (req, reply) => {
     reply.send(players)
 })
 
-fastify.listen(HTTPPORT, HTTPADDR, function (err, address) {
+fastify.listen({ port: HTTPPORT, host: HTTPADDR }, function (err, address) {
   if (err) {
     throw err;
   }
