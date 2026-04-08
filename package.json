@@ -9,7 +9,7 @@
   "author": "Dimaguy",
   "license": "GPL-3.0-or-later",
   "dependencies": {
-    "@fastify/static": "^9.0.0",
+    "@fastify/static": "^9.1.0",
     "atob": "^2.1.2",
     "btoa": "^1.2.1",
     "fastify": "^5.8.4",
